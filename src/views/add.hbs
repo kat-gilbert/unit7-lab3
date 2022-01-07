@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add an Assignment</title>
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<h1>Add an Assignment</h1>
+	
+	<form action="/add-confirmation" method="post">
+		<p>
+			<label for="name">Assignment Name</label>
+			<input name="name" id="name">
+		</p>
+		<p>
+			<label for="score">Score</label>
+			<input name="score" id="score" type="number" step=".5" min="0">
+		</p>
+        	<p>
+			<label for="total">Total</label>
+			<input name="total" id="total" type="number" step=".5" min="0">
+		</p>
+         	<p>
+			<label for="completed">Completed</label>
+			<select name="completef" id="completed">
+                <option name="true" id="true">Yes</option>
+                <option name="false" id="false">No</option>
+            </select>
+
+		</p>
+		<p>
+			<input type="submit" value="Add Assignment" />
+		</p>
+	</form>
+    <a href="home">Back to assignment list</a>
+</body>
+</html>
