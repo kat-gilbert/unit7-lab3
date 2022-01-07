@@ -14,7 +14,7 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // TODO Add routes here.
-app.use("/api/assignments", assignmentRoutes);
+app.use("/", assignmentRoutes);
 
 const port = 3000;
 app.listen(port, () => console.log(`Listening on port: ${port}.`));

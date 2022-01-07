@@ -1,6 +1,6 @@
 
 interface Assignment {
-    assignment: string,
+    name: string,
     score: number,
     total: number,
     completed: boolean,

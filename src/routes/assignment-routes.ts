@@ -5,28 +5,28 @@ const assignmentRoutes = express.Router();
 
 let assignmentArray: Assignment[] = [
 {
-    assignment: "Walrus Worksheet",
+    name: "Walrus Worksheet",
     score: 9,
     total: 10,
     completed: true,
     id: 1
 },
 {
-    assignment: "Jellyfish Project",
+    name: "Jellyfish Project",
     score: 15,
     total: 15,
     completed: true,
     id: 2
 },
 {
-    assignment: "Dolphin Quiz",
+    name: "Dolphin Quiz",
     score: 8,
     total: 10,
     completed: true,
     id: 3
 },
 {
-    assignment: "Oceans Unit Test",
+    name: "Oceans Unit Test",
     score: 0,
     total: 25,
     completed: false,
@@ -34,12 +34,14 @@ let assignmentArray: Assignment[] = [
 }];
 let nextId = 6;
 
-assignmentRoutes.get("/", (req, res) => {
+
+
+assignmentRoutes.get("/api/assignments/", (req, res) => {
     res.json(assignmentArray);
 })
 
-assignmentRoutes.get("/home", (req, res) => {
-    res.render("home", {assignmentArray});
+assignmentRoutes.get("/", (req, res) => {
+    res.render("home", {assignmentArray} );
 })
 
 function createAssignment(assignment: Assignment):void {
@@ -55,10 +57,10 @@ assignmentRoutes.get("/add", (req, res) => {
 assignmentRoutes.post("/add-confirmation", (req, res) => {
 
         const newAssignment: Assignment = {
-          assignment: req.body.name as string,
+          name: req.body.name as string,
           score: parseInt(req.body.score),
           total: parseInt(req.body.total),
-          completed: Boolean(req.body.completed),
+          completed: Boolean(req.body.completed as string),
         }
         createAssignment(newAssignment);
 
