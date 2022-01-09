@@ -56,16 +56,18 @@ assignmentRoutes.get("/api/summary", (req, res) => {
 
 assignmentRoutes.get("/", (req, res) => {
     let average = averageScore(assignmentArray);
-    if (assignmentArray.length === 0) {
+    let showAverage = false;
+
+    if (assignmentArray.length > 0) {
+        showAverage = true;
+        
+    }
+    else if (assignmentArray.length === 0) {
+        showAverage = false;
         average = 0;
     }
-    // if (completed === true) {
-    //     completed = "&check";
-    // }
-    // else {
 
-    // }
-        res.render("home", { average, assignmentArray });
+        res.render("home", { average, assignmentArray, showAverage });
 });
 
 function createAssignment(assignment: Assignment):void {
@@ -80,10 +82,10 @@ assignmentRoutes.get("/add", (req, res) => {
 
 assignmentRoutes.post("/add-confirmation", (req, res) => {
 
-        const newAssignment: Assignment = {
+        let newAssignment: Assignment = {
           name: req.body.name as string,
-          score: parseInt(req.body.score),
-          total: parseInt(req.body.total),
+          score: parseFloat(req.body.score),
+          total: parseFloat(req.body.total),
           completed: Boolean(req.body.completed as string),
         }
         createAssignment(newAssignment);

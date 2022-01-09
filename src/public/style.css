@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(26, 94, 94);
+    text-align: center;
+}
+
+h1 {
+    color: black;
+}
+
+th, label {
+    color: black;
+}
+
+table {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color:rgb(26, 94, 94);
+    text-decoration: none;
+}
+
+a:active {
+color: black;
+}
+
+a:visited {
+    color:rgb(26, 94, 94);
+}
+
+a:hover {
+    color: black;
+}

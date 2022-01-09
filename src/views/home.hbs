@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
     <title>Assignment Grades</title>
 </head>
 <body>
@@ -27,15 +28,15 @@
                 <td>{{total}}</td>
                 <td>{{#if completed}} &check; {{/if}}</td>
 				<td>
-					<a href="/api/assignments/{{id}}/delete">Delete</a>
-					<a href="/api/assignments/{{id}}/edit">Edit</a>
+					<a href="/api/assignments/{{id}}/edit">Edit</a> |
+					<a href="/api/assignments/{{id}}/delete">Delete</a> 
 
 				</td>
 			</tr>
 		{{/each}}
 		</tbody>
 	</table>
-    <p>Overall Average: {{average}}</p>
+    <p>{{#if showAverage}} Overall Average: {{average}} {{/if}}</p>
     <a href="add">Add an Assignment</a>
     
 </body>
