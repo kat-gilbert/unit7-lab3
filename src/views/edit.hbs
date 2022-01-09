@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit an Assignment</title>
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<h1>Edit an Assignment</h1>
+	
+	<form action="/api/assignments/{{assignment.id}}/edit-confirmation" method="post">
+		<p>
+			<label for="name">Assignment Name</label>
+			<input name="name" id="name" value="{{assignment.name}}">
+		</p>
+		<p>
+			<label for="score">Score</label>
+			<input name="score" id="score" type="number" step=".5" min="0" value="{{assignment.score}}">
+		</p>
+        	<p>
+			<label for="total">Total</label>
+			<input name="total" id="total" type="number" step=".5" min="0" value="{{assignment.total}}">
+		</p>
+         	<p>
+			<label for="completed">Completed</label>
+            <input type="checkbox" name="completed" id="completed" value="{{assignment.completed}}">
+
+		</p>
+		<p>
+			<input type="submit" value="Submit Changes" />
+		</p>
+	</form>
+    <a href="/">Back to assignment list</a>
+</body>
+</html>

@@ -25,9 +25,11 @@
 				<td>{{name}}</td>
 				<td>{{score}}</td>
                 <td>{{total}}</td>
-                <td>{{completed}}</td>
+                <td>{{#if completed}} &check; {{/if}}</td>
 				<td>
-					<a href="api/assignments/{{id}}/delete">Delete</a>
+					<a href="/api/assignments/{{id}}/delete">Delete</a>
+					<a href="/api/assignments/{{id}}/edit">Edit</a>
+
 				</td>
 			</tr>
 		{{/each}}

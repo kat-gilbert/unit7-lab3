@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Assignment?</title>
+    <title>Delete Confirmation</title>
 </head>
 <body>
-    <h1>Delete Assignment?</h1>
+    <h1>Assignment Deleted</h1>
 
-    <p>Are you sure you want to delete this assignment?</p>
+    <p>This assignment has been deleted.</p>
 
-    <p><label> Name: </label> {{assignment.name}}</p>
+    <p><label>Name:</label> {{name}}</p>
 
-    <a href="/api/assignments/{{id}}/delete-confirmation">Yes, delete this assignment</a>
     <a href="/">Back to list of assignments</a>
     
 </body>
